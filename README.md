@@ -29,6 +29,8 @@ As this module uses http to talk with Consul API the following parameters are al
       :failure: graceful
       :ignore_404: true
       :token: acl-uuid-token
+      :auth_username: 
+      :auth_password:
 
 ## Query the catalog
 
