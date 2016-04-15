@@ -109,6 +109,9 @@ class Hiera
       def wrapquery(path)
 
           httpreq = Net::HTTP::Get.new("#{path}#{token(path)}")
+          if @config[:auth_username]
+            httpreq.basic_auth  @config[:auth_username],  @config[:auth_password]
+          end
           answer = nil
           begin
             result = @consul.request(httpreq)
